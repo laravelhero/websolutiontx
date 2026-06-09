@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'dental-seo-guide',
+    title: "Local SEO for Dentists: The Ultimate Guide to Dominating Google Maps in Texas",
+    excerpt: "Learn how Texas dental practices can dominate local search, rank #1 in the Google Maps Pack, and attract consistent new patient appointments using dental SEO.",
+    publishDate: "May 31, 2026",
+    readTime: "7 min read",
+    category: "Dental Practices",
+    tagColor: "from-blue-500/20 to-teal-500/10 text-blue-400 border-blue-500/20"
+  },
+  {
+    slug: 'law-firm-marketing',
+    title: "Digital Marketing for Law Firms: Advanced SEO & PPC Strategies",
+    excerpt: "Discover the ultimate guide to law firm digital marketing. Learn how Texas attorneys can leverage localized SEO, search ads, and Local Service Ads to secure high-value legal leads.",
+    publishDate: "May 31, 2026",
+    readTime: "8 min read",
+    category: "Law Firms",
+    tagColor: "from-purple-500/20 to-indigo-500/10 text-purple-400 border-purple-500/20"
+  },
+  {
+    slug: 'contractor-lead-generation',
+    title: "How Home Service Contractors Can Double Their Local Leads",
+    excerpt: "Discover the ultimate guide to local marketing for contractors. Learn how HVAC, plumbing, and roofing companies in Texas can double calls and local leads.",
+    publishDate: "May 31, 2026",
+    readTime: "6 min read",
+    category: "Contractors",
+    tagColor: "from-orange-500/20 to-amber-500/10 text-orange-400 border-orange-500/20"
+  },
+  {
+    slug: 'real-estate-seo',
+    title: "Real Estate SEO & AI Search Optimization for Texas Agencies",
+    excerpt: "Discover how Texas real estate agencies can attract consistent buyers and sellers using advanced local SEO, AI search optimization (AISO), and localized community guides.",
+    publishDate: "May 31, 2026",
+    readTime: "7 min read",
+    category: "Real Estate",
+    tagColor: "from-green-500/20 to-emerald-500/10 text-green-400 border-green-500/20"
+  },
+  {
+    slug: 'restaurant-google-maps',
+    title: "Google Maps & Local SEO Secrets for Texas Restaurants",
+    excerpt: "Discover the ultimate guide to local SEO and Google Maps optimization for restaurants. Learn how Texas eateries can drive consistent foot traffic and delivery sales.",
+    publishDate: "May 31, 2026",
+    readTime: "6 min read",
+    category: "Restaurants & Retail",
+    tagColor: "from-red-500/20 to-rose-500/10 text-red-400 border-red-500/20"
+  }
+];
+
+const featuredPost = posts[0];
+const remainingPosts = posts.slice(1);
+---
+
+<Layout title="Insights & Local Search Marketing Blog | Websolution" description="Read advanced digital marketing guides, local SEO tutorials, AI Search Optimization (AISO) tips, and local ranking checklists customized for Texas business growth.">
+    <!-- Hero Section -->
+    <section x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)"
+             class="relative pt-40 pb-20 overflow-hidden bg-black">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-slate-950 z-10"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-600/10 blur-[130px] rounded-full pointer-events-none"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center"
+             x-bind:class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
+             style="transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;">
+            <div class="inline-block px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-sm font-medium mb-6">
+                Websolution Blog
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight max-w-4xl mx-auto">
+                Insights for <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">Local Dominance.</span>
+            </h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                Expert blueprints, SEO strategies, and digital marketing guides engineered to help Texas dental clinics, law firms, contractors, and businesses double their local lead volume.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Post Section -->
+    <section class="pb-12 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="group relative rounded-3xl overflow-hidden bg-slate-900 border border-white/5 hover:border-brand-500/30 transition-all duration-300 shadow-xl">
+                    <div class="grid lg:grid-cols-12 items-stretch">
+                        <div class="lg:col-span-7 relative min-h-[300px] lg:min-h-[450px] overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/40 to-transparent z-10"></div>
+                            <img src="/images/web-design-conversions.png" alt={featuredPost.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-6 left-6 z-20">
+                                <span class="px-3.5 py-1.5 rounded-full border border-brand-400/20 bg-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider">
+                                    ⭐ Featured Post
+                                </span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-between relative z-20">
+                            <div>
+                                <div class="flex items-center gap-3 mb-6">
+                                    <span class={`px-3 py-0.5 rounded-full border text-xs font-semibold uppercase tracking-wide bg-gradient-to-r ${featuredPost.tagColor}`}>
+                                        {featuredPost.category}
+                                    </span>
+                                    <span class="text-slate-500 text-xs">{featuredPost.publishDate}</span>
+                                </div>
+                                <h2 class="text-2xl lg:text-3xl font-extrabold text-white mb-4 leading-tight group-hover:text-brand-400 transition-colors">
+                                    <a href={`/blog/${featuredPost.slug}`}>{featuredPost.title}</a>
+                                </h2>
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                    {featuredPost.excerpt}
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-6">
+                                <span class="text-slate-500 text-xs font-medium">{featuredPost.readTime}</span>
+                                <a href={`/blog/${featuredPost.slug}`} class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-bold text-sm transition-colors group-hover:translate-x-1 duration-200">
+                                    Read Full Guide
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remaining Posts Grid -->
+    <section class="py-12 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    {remainingPosts.map((post) => (
+                        <div class="group rounded-2xl overflow-hidden bg-slate-900 border border-white/5 hover:border-brand-500/30 transition-all duration-300 flex flex-col justify-between shadow-lg">
+                            <div class="p-8">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <span class={`px-3 py-0.5 rounded-full border text-[10px] font-semibold uppercase tracking-wide bg-gradient-to-r ${post.tagColor}`}>
+                                        {post.category}
+                                    </span>
+                                    <span class="text-slate-500 text-xs">{post.publishDate}</span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-slate-800"></span>
+                                    <span class="text-slate-500 text-xs">{post.readTime}</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-400 transition-colors leading-tight">
+                                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                                </h3>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    {post.excerpt}
+                                </p>
+                            </div>
+                            <div class="p-8 pt-0 flex items-center justify-between border-t border-white/5 mt-6">
+                                <a href={`/blog/${post.slug}`} class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-bold text-xs transition-colors">
+                                    Read Guide
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

@@ -1,0 +1,72 @@
+---
+/**
+ * Reusable SEO <head> block — canonical URL, Open Graph, Twitter cards,
+ * robots directives and optional JSON-LD structured data.
+ *
+ * This component is OPT-IN and does not affect any page until you add it.
+ * Your Layout already exposes a `head` slot, so you can drop this in
+ * without modifying Layout.astro:
+ *
+ *   ---
+ *   import Layout from '../layouts/Layout.astro';
+ *   import Seo from '../components/Seo.astro';
+ *   import { getSeo, organizationSchema } from '../data';
+ *   const meta = getSeo(Astro.url.pathname);
+ *   ---
+ *   <Layout title={meta.title} description={meta.description}>
+ *     <Seo slot="head" {...meta} jsonLd={[organizationSchema()]} />
+ *     ... page content ...
+ *   </Layout>
+ *
+ * Note: it intentionally does NOT render <title>/description, because your
+ * Layout already does. It only adds the extra SEO tags.
+ */
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Absolute canonical URL. */
+  canonical?: string;
+  /** Social image path (under /public) or absolute URL. */
+  ogImage?: string;
+  /** Ask search engines not to index this page. */
+  noindex?: boolean;
+  /** One or more JSON-LD objects to embed. */
+  jsonLd?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = site.defaultOgImage,
+  noindex = false,
+  jsonLd = [],
+} = Astro.props;
+
+const absoluteImage = ogImage.startsWith('http') ? ogImage : site.url + ogImage;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, site.url).href;
+---
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={canonicalUrl} />
+
+{/* Open Graph */}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={absoluteImage} />
+
+{/* Twitter */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={absoluteImage} />
+
+{/* Structured data */}
+{jsonLd.map((data) => (
+  <script type="application/ld+json" set:html={JSON.stringify(data)} />
+))}

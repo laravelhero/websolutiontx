@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+const lastUpdated = "May 30, 2026";
+---
+
+<Layout
+  title="Terms of Service | Web Solution Agency"
+  description="Read the Terms of Service governing the use of Web Solution Agency's website and services."
+>
+  <!-- Page Hero -->
+  <section class="relative bg-slate-950 pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-600/10 via-transparent to-transparent pointer-events-none"></div>
+    <div class="absolute top-20 right-20 w-72 h-72 bg-brand-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+    <div class="container mx-auto px-6 relative z-10 max-w-4xl">
+      <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/20 rounded-full px-4 py-1.5 text-sm text-brand-400 font-medium mb-6">
+        Legal
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+        Terms of Service
+      </h1>
+      <p class="text-slate-400 text-base">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="border-t border-white/5"></div>
+
+  <!-- Content -->
+  <section class="bg-slate-950 py-16">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="space-y-12">
+
+        <!-- Intro -->
+        <div class="bg-slate-900 border border-white/5 rounded-2xl p-8">
+          <p class="text-slate-300 leading-relaxed text-base">
+            Welcome to <span class="text-white font-semibold">Web Solution Agency</span>. By accessing or using our website and services, you agree to be bound by these Terms of Service. Please read them carefully before using our services. If you do not agree with any part of these terms, you may not access our website or engage our services.
+          </p>
+        </div>
+
+        <!-- Section 1 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+            Services
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <p>Web Solution Agency provides digital services including but not limited to web design, web development, mobile app development, UI/UX design, SEO optimization, digital marketing, and brand strategy. The specific scope of services for each client is defined in a separate project agreement, proposal, or statement of work.</p>
+            <p>We reserve the right to modify, suspend, or discontinue any service at any time without prior notice. We will not be liable to you or any third party for any modification, suspension, or discontinuation of services.</p>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+            Client Responsibilities
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <p>When engaging our services, you agree to:</p>
+            <div class="space-y-3 mt-2">
+              {[
+                "Provide accurate, complete, and timely information, materials, and feedback required to complete your project.",
+                "Ensure that all content, images, and assets provided to us do not infringe on any third-party intellectual property rights.",
+                "Appoint a single point of contact with authority to make decisions regarding the project.",
+                "Respond to requests for feedback or approvals within the timeframe agreed upon in the project schedule.",
+                "Make payments according to the agreed payment schedule.",
+              ].map((item) => (
+                <div class="flex gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5 flex-shrink-0"></span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+            Payment Terms
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { title: "Payment Schedule", desc: "Payment terms are outlined in your individual project proposal or contract." },
+                { title: "Late Payments", desc: "Overdue invoices may incur a late fee. We reserve the right to pause work on overdue accounts." },
+                { title: "Refunds", desc: "Payments for completed work or milestones are non-refundable unless otherwise agreed in writing." },
+                { title: "Disputes", desc: "Payment disputes must be raised in writing within 7 days of receiving an invoice." },
+              ].map((card) => (
+                <div class="bg-slate-900 border border-white/5 rounded-xl p-5">
+                  <h4 class="text-white font-semibold text-sm mb-2">{card.title}</h4>
+                  <p class="text-slate-400 text-sm">{card.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
+            Intellectual Property
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <p><span class="text-white font-medium">Our Work.</span> All work, concepts, designs, code, and deliverables created by Web Solution Agency during a project remain our intellectual property until full payment has been received. Upon receipt of final payment, ownership of the agreed deliverables transfers to the client.</p>
+            <p><span class="text-white font-medium">Our Brand.</span> Our name, logo, website content, and any other branded materials are protected by intellectual property laws. You may not use, reproduce, or distribute them without our express written consent.</p>
+            <p><span class="text-white font-medium">Client Content.</span> You retain ownership of all content, trademarks, logos, and materials you provide to us. By providing these materials, you grant us a limited license to use them solely for the purpose of completing your project.</p>
+            <p><span class="text-white font-medium">Portfolio Rights.</span> We reserve the right to display completed work in our portfolio, case studies, and marketing materials unless otherwise agreed in a signed non-disclosure agreement.</p>
+          </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">5</span>
+            Confidentiality
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <p>Both parties agree to keep confidential any proprietary or sensitive business information shared during the course of the engagement. This obligation does not apply to information that is publicly available, independently developed, or required to be disclosed by law.</p>
+            <p>If a formal Non-Disclosure Agreement (NDA) is required, it must be executed separately in writing before project commencement.</p>
+          </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">6</span>
+            Limitation of Liability
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <p>To the maximum extent permitted by applicable law, Web Solution Agency shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising out of or in connection with your use of our services.</p>
+            <p>Our total liability for any claim arising out of or related to these terms shall not exceed the total amount paid by you to us in the three (3) months preceding the event giving rise to the claim.</p>
+          </div>
+        </div>
+
+        <!-- Section 7 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">7</span>
+            Termination
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <p>Either party may terminate a project engagement with written notice. Upon termination:</p>
+            <div class="space-y-2 mt-2">
+              <div class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5 flex-shrink-0"></span>
+                <span>All outstanding fees for work completed up to the termination date become immediately due and payable.</span>
+              </div>
+              <div class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5 flex-shrink-0"></span>
+                <span>Any deliverables already produced remain the property of Web Solution Agency until all outstanding balances are settled.</span>
+              </div>
+              <div class="flex gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5 flex-shrink-0"></span>
+                <span>Confidentiality obligations survive termination.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 8 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">8</span>
+            Acceptable Use
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11 space-y-3">
+            <p>When using our website or services, you agree not to:</p>
+            <div class="space-y-2 mt-2">
+              {[
+                "Use our services for any unlawful purpose or in violation of any regulations.",
+                "Transmit any harmful, offensive, or objectionable content.",
+                "Attempt to gain unauthorized access to any part of our systems or services.",
+                "Engage in any activity that could damage, disable, or impair our website or servers.",
+                "Use our website to send unsolicited communications (spam).",
+              ].map((item) => (
+                <div class="flex gap-3">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-500 mt-2.5 flex-shrink-0"></span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 9 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">9</span>
+            Governing Law
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11">
+            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Texas, United States, without regard to its conflict of law provisions. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts located in Texas.</p>
+          </div>
+        </div>
+
+        <!-- Section 10 -->
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm font-bold flex-shrink-0">10</span>
+            Changes to These Terms
+          </h2>
+          <div class="text-slate-400 leading-relaxed pl-11">
+            <p>We reserve the right to modify these Terms of Service at any time. We will update the "Last updated" date at the top of this page when changes are made. Continued use of our services after changes are posted constitutes your acceptance of the updated terms.</p>
+          </div>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="bg-gradient-to-br from-brand-500/10 to-brand-600/5 border border-brand-500/20 rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-400 flex-shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-1">Questions about these terms?</h3>
+            <p class="text-slate-400 text-sm mb-3">If you have any questions about our Terms of Service, don't hesitate to get in touch.</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="mailto:websolutiontx@gmail.com" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-medium text-sm transition-colors">
+                websolutiontx@gmail.com
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+              <a href="tel:+18322667209" class="inline-flex items-center gap-2 text-slate-400 hover:text-white font-medium text-sm transition-colors">
+                Call Us Now
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
